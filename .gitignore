@@ -1,0 +1,33 @@
+# History files
+.Rhistory
+.Rapp.history
+
+# Session Data files
+.RData
+.Ruserdata
+
+# User-specific files
+.Rproj.user/
+.Renviron
+
+# RStudio files
+.Rproj.user/
+
+# Knitr and R Markdown cache files
+*_cache/
+/cache/
+
+# R Package Development files
+# Ignore files produced by R CMD build
+*.tar.gz
+*.Rcheck/
+
+# Vignette outputs
+vignettes/*.html
+vignettes/*.pdf
+
+# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
+.httr-oauth
+
+# Shiny token
+rsconnect/
