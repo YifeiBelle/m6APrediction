@@ -1,0 +1,29 @@
+Package: m6APrediction
+Type: Package
+Title: A Toolset for Predicting N6-methyladenosine (m6A) Sites in RNA
+Version: 1.0.0
+Authors@R: 
+    person(given = "Yifei",
+           family = "Song",
+           email = "Yifei.Song23@student.xjtlu.edu.cn",
+           role = c("aut", "cre"))
+Description: 
+    Provides a streamlined workflow for N6-methyladenosine (m6A) site 
+    prediction from RNA sequences. This package includes functions for 
+    encoding DNA k-mers into a machine learning-compatible format and 
+    applying a pre-trained random forest model to predict m6A status for 
+    both single sites and large batches of data. It is designed to support 
+    research in epitranscriptomics.
+License: MIT + file LICENSE
+Encoding: UTF-8
+RoxygenNote: 7.3.3
+Depends: 
+    R (>= 3.5.0)
+Imports:
+    stats,
+    randomForest
+Suggests: 
+    testthat,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
