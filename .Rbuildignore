@@ -1,0 +1,5 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^generate_namespace\.R$
+^install_local\.R$
+^run_check\.R$
