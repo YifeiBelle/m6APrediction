@@ -3,3 +3,7 @@
 ^generate_namespace\.R$
 ^install_local\.R$
 ^run_check\.R$
+^troubleshoot_install\.R$
+^Usage_Example\.R$
+^m6A_input_example\.csv$
+^\.github$
