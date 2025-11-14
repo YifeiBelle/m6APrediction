@@ -7,3 +7,4 @@
 ^Usage_Example\.R$
 ^m6A_input_example\.csv$
 ^\.github$
+^\.rlib$
