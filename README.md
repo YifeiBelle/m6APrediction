@@ -33,66 +33,26 @@ devtools::install_github("YifeiBelle/m6APrediction")
 
 ## Usage
 
-Here is a practical example of how to use the `m6APrediction` package to get predictions for single and multiple RNA sites.
+Below is a brief guide on how to use the `m6APrediction` package. For more detailed examples, please refer to the package's documentation.
 
-### Step 1: Load the Package and the Model
+### Loading the Model
 
-First, load the package and the pre-trained Random Forest model included with the project.
+First, load the pre-trained Random Forest model provided with the package.
 
 ```r
 library(m6APrediction)
 library(randomForest)
 
 # Load the pre-trained model
-# Make sure the path to 'rf_fit.rds' is correct
-m6a_model <- readRDS("rf_fit.rds") 
+m6a_model <- readRDS(system.file("extdata", "rf_fit.rds", package = "m6APrediction"))
 ```
 
-### Step 2: Predict a Single Site
+### Making Predictions
 
-Use the `prediction_single()` function for quick, interactive predictions on one site. You need to provide all the required features as arguments.
+You can predict m6A sites for single or multiple instances.
 
-```r
-single_result <- prediction_single(
-  ml_fit = m6a_model,
-  gc_content = 0.55,
-  RNA_type = "mRNA",
-  RNA_region = "3'UTR",
-  exon_length = 10,
-  distance_to_junction = 5,
-  evolutionary_conservation = 0.8,
-  DNA_5mer = "GGACA"
-)
-
-print("Single Prediction Result:")
-print(single_result)
-```
-
-### Step 3: Predict Multiple Sites in Batch
-
-For larger datasets, use the `prediction_multiple()` function. You need to prepare a data frame where each row represents a site and columns correspond to the required features.
-
-```r
-# Create a data frame with new data to predict
-batch_data <- data.frame(
-  gc_content = c(0.6, 0.4),
-  RNA_type = c("mRNA", "lncRNA"),
-  RNA_region = c("CDS", "intron"),
-  exon_length = c(12, 9),
-  distance_to_junction = c(2, 20),
-  evolutionary_conservation = c(0.95, 0.15),
-  DNA_5mer = c("AAGAC", "TGCAT")
-)
-
-# Get batch predictions
-batch_results <- prediction_multiple(
-  ml_fit = m6a_model,
-  feature_df = batch_data
-)
-
-print("Batch Prediction Results:")
-print(batch_results)
-```
+- **Single Prediction**: Use `prediction_single()` for individual predictions by providing the required features.
+- **Batch Prediction**: Use `prediction_multiple()` for batch predictions by passing a data frame with the necessary features.
 
 ---
 
