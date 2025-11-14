@@ -1,6 +1,5 @@
 # m6APrediction: An R Package for Predicting m6A Modification Sites
 
-[![R-CMD-check](https://github.com/YifeiBelle/m6APrediction/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/YifeiBelle/m6APrediction/actions/workflows/R-CMD-check.yaml)
 
 ## Overview
 
