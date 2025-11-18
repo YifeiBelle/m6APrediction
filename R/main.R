@@ -91,6 +91,7 @@ dna_encoding <- function(dna_strings) {
 #'   \item{`predicted_m6A_prob`}{The predicted probability of the site being "Positive".}
 #'   \item{`predicted_m6A_status`}{The final predicted class ("Positive" or "Negative") based on the threshold.}
 #'
+#' @importFrom stats predict
 #' @export
 #'
 #' @examples
@@ -171,6 +172,7 @@ prediction_multiple <- function(ml_fit, feature_df, positive_threshold = 0.5) {
 #' @return A `data.frame` with one row and two columns:
 #'   `predicted_m6A_prob` and `predicted_m6A_status`.
 #'
+#' @importFrom stats predict
 #' @export
 #'
 #' @examples

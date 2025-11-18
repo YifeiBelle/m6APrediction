@@ -8,3 +8,5 @@
 ^m6A_input_example\.csv$
 ^\.github$
 ^\.rlib$
+^document\.R$
+^install_script\.R$
