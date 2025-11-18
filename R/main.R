@@ -170,7 +170,7 @@ prediction_multiple <- function(ml_fit, feature_df, positive_threshold = 0.5) {
 #' @param positive_threshold The numeric probability threshold (0-1) to classify
 #'   a site as "Positive". Defaults to 0.5.
 #'
-#' @return A named character vector containing two elements:
+#' @return A `data.frame` with one row and two columns:
 #'   `predicted_m6A_prob` and `predicted_m6A_status`.
 #'
 #' @importFrom stats predict
@@ -221,11 +221,8 @@ prediction_single <- function(ml_fit, gc_content, RNA_type, RNA_region, exon_len
     positive_threshold = positive_threshold
   )
   
-  # Extract the results from the single-row data frame
-  final_result <- c(
-    predicted_m6A_prob = as.character(prediction_result_df$predicted_m6A_prob),
-    predicted_m6A_status = prediction_result_df$predicted_m6A_status
-  )
+  # Extract the relevant columns to return
+  final_result <- prediction_result_df[, c("predicted_m6A_prob", "predicted_m6A_status")]
   
   return(final_result)
 }
