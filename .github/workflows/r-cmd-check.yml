@@ -27,6 +27,6 @@ jobs:
             any::rcmdcheck
           needs: check
 
-      - uses: r-lib/actions/check-r-package@v2
-        with:
-          error-on: "error"
+      - name: Check package
+        run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
+        shell: Rscript {0}
