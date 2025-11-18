@@ -118,6 +118,11 @@ dna_encoding <- function(dna_strings) {
 #' }
 #'
 prediction_multiple <- function(ml_fit, feature_df, positive_threshold = 0.5) {
+  # Ensure the randomForest package is loaded for the predict method to be found
+  if (!requireNamespace("randomForest", quietly = TRUE)) {
+    stop("The 'randomForest' package is required but not installed.")
+  }
+
   # Check for the presence of all required columns
   required_cols <- c("gc_content", "RNA_type", "RNA_region", "exon_length",
                      "distance_to_junction", "evolutionary_conservation", "DNA_5mer")
